@@ -1,0 +1,260 @@
+/* Fonte geral */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Navegação lateral */
+nav {
+  width: 240px;
+  background-color: #111827;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.nav-header img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.logo-text {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #00adb5;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+nav ul li {
+  margin: 15px 0;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #00adb5;
+  color: #000;
+}
+
+/* Conteúdo principal */
+section {
+  margin-left: 260px;
+  padding: 40px;
+  flex: 1;
+}
+.title {
+  font-size: 2.5em;
+  color: #00fff5;
+  margin-bottom: 10px;
+}
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* Slide de imagens */
+.slider {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+@keyframes slide {
+  0% { margin-left: 0; }
+  33% { margin-left: -100%; }
+  66% { margin-left: -200%; }
+  100% { margin-left: 0; }
+}
+
+/* Cards de produtos */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background: #1f2937;
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.card h3 {
+  color: #00fff5;
+}
+.card p {
+  color: #ccc;
+}
+.card .cta-button {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Botão CTA */
+.cta-button {
+  background: linear-gradient(45deg, #00adb5, #00ffcc);
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00ffcc;
+}
+.cta-button:hover {
+  background: linear-gradient(45deg, #00ffcc, #00adb5);
+  box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+}
+
+/* Formulário */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+form input:invalid,
+form textarea:invalid {
+  border: 2px solid #e63946;
+}
+form input:valid,
+form textarea:valid {
+  border: 2px solid #00adb5;
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 28px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.2s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section {
+    margin-left: 0;
+    padding: 20px;
+  }
+  .slider {
+    height: 250px;
+  }
+  .gallery {
+    justify-content: center;
+  }
+}
+
+:root {
+  --cor-fundo: #0f2027;
+  --cor-gradiente: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --cor-texto: #ffffff;
+  --cor-nav-bg: #111827;
+  --cor-link-hover-bg: #00adb5;
+  --cor-btn-bg-start: #00adb5;
+  --cor-btn-bg-end: #00ffcc;
+}
+
+body {
+  background: var(--cor-gradiente);
+  color: var(--cor-texto);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+nav {
+  background-color: var(--cor-nav-bg);
+  transition: background-color 0.5s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--cor-link-hover-bg);
+  color: #000;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, var(--cor-btn-bg-start), var(--cor-btn-bg-end));
+  color: #000;
+  transition: background 0.5s ease;
+}
+
+/* Tema claro */
+body.tema-claro {
+  --cor-fundo: #ffffff;
+  --cor-gradiente: linear-gradient(135deg, #f0f0f0, #dcdcdc, #cfcfcf);
+  --cor-texto: #222222;
+  --cor-nav-bg: #f7f7f7;
+  --cor-link-hover-bg: #1e90ff;
+  --cor-btn-bg-start: #1e90ff;
+  --cor-btn-bg-end: #63a4ff;
+}
